@@ -1,0 +1,11 @@
+node_modules
+dist
+dist-ssr
+lib
+.merlin
+.DS_Store
+.tool-versions
+*.local
+*.bs.js
+.bsb.lock
+*.log
