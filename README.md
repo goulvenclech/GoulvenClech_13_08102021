@@ -1,6 +1,12 @@
 # Argent Bank
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/509a50b6-fb7b-4ac2-8fe1-224373ba9189/deploy-status)](https://app.netlify.com/sites/frosty-jackson-8f2a78/deploys)
+
 ***Work in progress***
+
+**Useful links:**
+- [Live demo 🌍](https://oc-p13.goulven-clech.dev) 
+- [Repository 📖](https://github.com/GoulvenC/GoulvenClech_13_08102021)
 
 ## Installation
 

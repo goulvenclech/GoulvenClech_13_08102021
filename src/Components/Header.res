@@ -1,7 +1,7 @@
 @react.component
 let make = () => {
     <nav className="main-nav">
-      <a className="main-nav-logo" href="./index.html">
+      <a className="main-nav-logo" onClick={_ => RescriptReactRouter.push("/")}>
         <img
           className="main-nav-logo-image"
           src="./img/argentBankLogo.png"
@@ -12,7 +12,7 @@ let make = () => {
         </h1>
       </a>
       <div>
-        <a className="main-nav-item" href="./sign-in.html">
+        <a className="main-nav-item" onClick={_ => RescriptReactRouter.push("/sign-in")}>
           <i className="fa fa-user-circle"></i>
           {React.string("Sign In")}
         </a>
