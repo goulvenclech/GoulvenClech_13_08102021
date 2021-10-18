@@ -1,4 +1,5 @@
 %%raw("import 'tailwindcss/tailwind.css'")
+%%raw("import '../designs/css/main.css'")
 
 @react.component
 let make = () => {

@@ -1,4 +1,11 @@
 @react.component
 let make = () => {
-  <p>{React.string("Hello world !")}</p>
+  <>
+    <Header />
+    <main>
+      <Hero />
+      <Features />
+    </main>
+    <Footer />
+  </>
 }
