@@ -7,6 +7,7 @@ let make = () => {
 
   switch url.path {
     | list{} => <Home />
+    | list{"user"} => <User />
     | _ => <NotFound />
   }
 }
