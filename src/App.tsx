@@ -1,9 +1,11 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import { Provider } from "react-redux"
+import { store } from "./App/Store"
 import { BrowserRouter as Router, Switch, Route }
  from "react-router-dom"
 import "tailwindcss/tailwind.css"
-import '../designs/css/main.css'
+import "../designs/css/main.css"
 // import all pages & components
 import Footer from "./Components/Footer"
 import Header from "./Components/Header"
@@ -16,6 +18,8 @@ import NotFoundPage from "./Pages/NotFound"
  * Contain the router logic of our App !
  */
 ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
       <Router>
         <Header />
         <Switch>
@@ -33,6 +37,8 @@ ReactDOM.render(
           </Route>
         </Switch>
         <Footer />
-      </Router>,
-  document.getElementById('root')
+      </Router>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
 )

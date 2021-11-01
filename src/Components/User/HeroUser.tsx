@@ -1,4 +1,5 @@
 import React from "react"
+import Counter from "./Counter"
 
 export default function Hero() {
   return (
@@ -7,6 +8,7 @@ export default function Hero() {
         Welcome back<br />
         Tony Jarvis!
       </h1>
+      <Counter />
       <button className="edit-button">
         Edit Name 
       </button>
