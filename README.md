@@ -18,11 +18,9 @@
 
 3 - Install the dependencies with `yarn install`
 
-4 - Start [ReScript](https://rescript-lang.org/) with `yarn start`
+4 - Start [Vite](https://vitejs.dev/) live server with `yarn dev`
 
-5 - Start [Vite](https://vitejs.dev/) live server with `yarn dev`
-
-6 - To obtain a production version do `yarn build`
+5 - To obtain a production version do `yarn build`
 
 ## License
 

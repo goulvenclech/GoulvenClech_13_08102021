@@ -6,6 +6,5 @@ lib
 .DS_Store
 .tool-versions
 *.local
-*.bs.js
 .bsb.lock
 *.log
