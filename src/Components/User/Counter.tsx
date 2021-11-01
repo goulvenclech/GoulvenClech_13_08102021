@@ -1,6 +1,6 @@
 import React from 'react'
-import { useAppSelector, useAppDispatch } from '../../App/Hooks'
-import { decrement, increment } from "../../Features/CounterSlice"
+import { useAppSelector, useAppDispatch } from '../../Redux/Hooks'
+import { decrement, increment } from "../../Redux/Slices/CounterSlice"
 
 export default function Counter() {
 // The `state` arg is correctly typed as `RootState` already
