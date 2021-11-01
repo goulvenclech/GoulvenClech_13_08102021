@@ -3,6 +3,16 @@
  */
 @react.component
 let make = () => {
+
+  let (username, setUsername) = React.useState(() => "")
+  let (password, setPassword) = React.useState(() => "")
+
+  // let lol = ApiHooks.useUserData()
+
+  let test = (user: string, passw: string) => {
+    Js.log(`${user} : ${passw}`)
+  }
+
   <>
     <Header />
     <main className="main bg-dark">
@@ -16,13 +26,19 @@ let make = () => {
             <label htmlFor="username">
               {React.string("Username")}
             </label>
-            <input type_="text" id="username" />
+            <input type_="text" id="username" onChange={event => {
+              let username = ReactEvent.Form.target(event)["value"]
+              setUsername(_ => username)
+            }}/>
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">
               {React.string("Password")}
             </label>
-            <input type_="password" id="password" />
+            <input type_="password" id="password" onChange={event => {
+              let password = ReactEvent.Form.target(event)["value"]
+              setPassword(_ => password)
+            }}/>
           </div>
           <div className="input-remember">
             <label htmlFor="remember-me">
@@ -30,13 +46,9 @@ let make = () => {
             </label>
             <input type_="checkbox" id="remember-me" />
           </div>
-          /* PLACEHOLDER DUE TO STATIC SITE */
-          <a onClick={_ => RescriptReactRouter.push("/user")} className="sign-in-button">
+          <a onClick={_ => test(username, password)} className="sign-in-button">
             {React.string("Sign In")}
           </a>
-          /* SHOULD BE THE BUTTON BELOW */
-          /* <button className="sign-in-button">Sign In</button> */
-          /*  */
         </form>
       </section>
     </main>

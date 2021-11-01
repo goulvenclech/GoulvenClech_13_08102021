@@ -12,7 +12,6 @@
     "@glennsl/bs-json": "^5.0.4",
     "@reduxjs/toolkit": "^1.6.2",
     "@rescript/react": "^0.10.3",
-    "d3": "^7.0.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
