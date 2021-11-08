@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
+import { useAppSelector, useAppDispatch } from '../../Redux/Hooks'
+import { userLogin } from "../../Redux/Slices/LoginSlice"
 /**
  * The sign in form of our bank. 
  */
@@ -10,6 +12,7 @@ export default function LoginForm() {
   // Needed for handleSubmit
   const [error, setError] = useState("")
   const history = useHistory()
+  const dispatch = useAppDispatch()
   // handleSubit post request on login back end
   const handleSubmit = (evt: React.SyntheticEvent) => {
     evt.preventDefault()
@@ -25,7 +28,7 @@ export default function LoginForm() {
       const isJson = response.headers.get("content-type")?.includes("application/json")
       const data = isJson && await response.json()
       if (response.ok) {
-        console.log(response)
+        dispatch(userLogin(data.body.token))
         history.push("/user")
       } else {
         console.error(response)

@@ -1,12 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit"
-import counterReducer from "./Slices/CounterSlice"
-
+import loginReducer from "./Slices/LoginSlice"
+/**
+ * Redux store
+ */
 export const store = configureStore({
   reducer: {
-    counter: counterReducer
+    login: loginReducer
   }
 })
-
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
