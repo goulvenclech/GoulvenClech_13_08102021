@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import type { RootState } from "../Store"
 // Define a type for the slice state
 interface LoginState {
   isLogged: boolean,
@@ -20,7 +19,7 @@ export const loginSlice = createSlice({
       state.token = action.payload
     },
     userLogoff: state => {
-      state.isLogged = true,
+      state.isLogged = false,
       state.token = ""
     }
   }

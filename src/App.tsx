@@ -11,7 +11,7 @@ import Footer from "./Components/Footer"
 import Header from "./Components/Header"
 import HomePage from "./Pages/Home"
 import SignInPage from "./Pages/SignIn"
-import UserPage from "./Pages/User"
+import DarshboardPage from "./Pages/Dashboard"
 import NotFoundPage from "./Pages/NotFound"
 
 /**
@@ -30,7 +30,7 @@ ReactDOM.render(
             <SignInPage />
           </Route>
           <Route path="/user">
-            <UserPage />
+            <DarshboardPage />
           </Route>
           <Route path="/*">
             <NotFoundPage />
