@@ -11,9 +11,8 @@ import Footer from "./Components/Footer"
 import Header from "./Components/Header"
 import HomePage from "./Pages/Home"
 import SignInPage from "./Pages/SignIn"
-import DarshboardPage from "./Pages/Dashboard"
+import DashboardPage from "./Pages/Dashboard"
 import NotFoundPage from "./Pages/NotFound"
-
 /**
  * Contain the router logic of our App !
  */
@@ -29,8 +28,8 @@ ReactDOM.render(
           <Route path="/sign-in">
             <SignInPage />
           </Route>
-          <Route path="/user">
-            <DarshboardPage />
+          <Route path="/dashboard">
+            <DashboardPage />
           </Route>
           <Route path="/*">
             <NotFoundPage />

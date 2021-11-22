@@ -1,11 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-// Define a type for the slice state
-interface LoginState {
-  isLogged: boolean,
-  token: string
-}
-// Define the initial state using that type
-const initialState: LoginState = {
+import { userStatus } from "../../dataTypes"
+// Define the initial state
+const initialState: userStatus = {
   isLogged: false,
   token: ""
 }

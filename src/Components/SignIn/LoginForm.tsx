@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
-import { useAppSelector, useAppDispatch } from '../../Redux/Hooks'
+import { useAppDispatch } from '../../Redux/Hooks'
 import { userLogin } from "../../Redux/Slices/LoginSlice"
 /**
  * The sign in form of our bank. 
@@ -29,7 +29,7 @@ export default function LoginForm() {
       const data = isJson && await response.json()
       if (response.ok) {
         dispatch(userLogin(data.body.token))
-        history.push("/user")
+        history.push("/dashboard")
       } else {
         console.error(response)
         setError(data.message)
