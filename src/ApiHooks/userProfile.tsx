@@ -3,7 +3,7 @@ import { emptyProfile } from "../dataTypes"
 import { useAppDispatch } from "../Redux/Hooks"
 import { updateUserProfile } from "../Redux/Slices/ProfileSlice"
 /**
- * 
+ * With a correct token, fetch the user profile end point of our API 
  */
 export const useUserProfile = (token: string) => {
     const [isLoading, setIsLoading] = useState(false)
@@ -21,14 +21,7 @@ export const useUserProfile = (token: string) => {
         const data = isJson && await response.json()
         if (response.ok) {
           console.log(data)
-          setApiData({
-            email: data.email,
-            firstName: data.firstName,
-            lastName: data.lastName,
-            createdAt: data.createdAt,
-            updatedAt: data.updateAt,
-            id: data.id
-          })
+          setApiData(data.body)
           setIsLoading(false)
         } else {
           console.error(response)

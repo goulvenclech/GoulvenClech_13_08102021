@@ -5,13 +5,17 @@ import { useAppDispatch, useAppSelector } from '../Redux/Hooks'
 import { useUserProfile } from "../ApiHooks/userProfile"
 import Information from "../Components/Information"
 import { updateUserProfile } from "../Redux/Slices/ProfileSlice"
-
+/**
+ * User dashboard, display the user's bank account data 
+ */
 export default function DashboardPage() {
   const logged = useAppSelector(state => state.login.isLogged)
   const token = useAppSelector(state => state.login.token)
+  // fetch userProfile to load fresh data
   const { isLoading, serverError, apiData } = useUserProfile(token)
-      const dispatch = useAppDispatch()
-    dispatch(updateUserProfile(apiData))
+  // save userProfile with Redux
+  const dispatch = useAppDispatch()
+  dispatch(updateUserProfile(apiData))
 
   return (
     <main className="main bg-dark">

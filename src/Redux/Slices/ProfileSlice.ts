@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { useUserProfile } from "../../ApiHooks/userProfile"
 import { userProfile } from "../../dataTypes"
 // Define the initial state using that type
 const initialState: userProfile = {
@@ -16,7 +15,13 @@ export const ProfileSlice = createSlice({
   initialState,
   reducers: {
     updateUserProfile: (state, action: PayloadAction<userProfile>) => {
-      state = action.payload
+      const data = action.payload
+      state.email = data.email,
+      state.firstName = data.firstName,
+      state.lastName = data.lastName,
+      state.createdAt = data.createdAt,
+      state.updatedAt = data.updatedAt,
+      state.id = data.id
     },
   }
 })
