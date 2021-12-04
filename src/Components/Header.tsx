@@ -1,17 +1,21 @@
 import React from "react"
 import { Link, useHistory } from "react-router-dom"
 import { useAppSelector, useAppDispatch } from "../Redux/Hooks"
-import { userLogin, userLogoff } from "../Redux/Slices/LoginSlice"
+import { userLogoff } from "../Redux/Slices/LoginSlice"
 /**
  * The header displayed in all the application
  */
 export default function Footer() {
   const logged = useAppSelector(state => state.login.isLogged)
+  const userFirstName = useAppSelector(state => state.profile.firstName)
   const history = useHistory()
   const dispatch = useAppDispatch()
-  const handleSubmit = (evt: React.SyntheticEvent) => {
+  const handleSignOut = (evt: React.SyntheticEvent) => {
     dispatch(userLogoff())
     history.push("/")
+  }
+  const handleClickProfile = (evt: React.SyntheticEvent) => {
+    history.push("/dashboard")
   }
   return (
     <nav className="main-nav">
@@ -25,19 +29,23 @@ export default function Footer() {
           Argent Bank
         </h1>
       </Link>
-      <div>
       {
         logged === true ?
-        <a className="main-nav-item cursor-pointer" onClick={handleSubmit}>
-          <i className="fa fa-user-circle"></i>
-          Sign out
-        </a> :
+        <div>
+          <a className="main-nav-item cursor-pointer" onClick={handleClickProfile}>
+            <i className="fa fa-user-circle"></i>
+            {userFirstName}
+          </a>
+          <a className="main-nav-item cursor-pointer" onClick={handleSignOut}>
+            <i className="fa fa-sign-out"></i>
+            Sign out
+          </a> 
+        </div> :
         <Link className="main-nav-item" to="/sign-in">
           <i className="fa fa-user-circle"></i>
           Sign In
         </Link>
       }
-      </div>
     </nav>
   )
 }

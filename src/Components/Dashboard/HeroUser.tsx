@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { useAppSelector } from "../../Redux/Hooks"
+import { useAppDispatch, useAppSelector } from "../../Redux/Hooks"
+import { updateUserProfile } from "../../Redux/Slices/ProfileSlice"
 /**
  * Hero of user Dashboard, display a welcome message and a module to 
  * change user's name 
@@ -8,7 +9,6 @@ export default function Hero() {
   // get all the data needed
   const userFirstName = useAppSelector(state => state.profile.firstName)
   const userLastName = useAppSelector(state => state.profile.lastName)
-  const [username, setUsername] = useState(userFirstName + " " + userLastName)
   const token = useAppSelector(state => state.login.token)
   // Is the user editing their name ?
   const [editing, setEditing] = useState(false)
@@ -16,6 +16,7 @@ export default function Hero() {
   const [newFirstName, setNewFirstName] = useState(userFirstName)
   const [newLastName, setNewLastName] = useState(userLastName)
   const [serverError, setServerError] = useState(false)
+  const dispatch = useAppDispatch()
   /**
    * Handle click on "Edit" and "Cancel" button
    */
@@ -41,7 +42,7 @@ export default function Hero() {
       const isJson = response.headers.get("content-type")?.includes("application/json")
       const data = isJson && await response.json()
       if (response.ok) {
-        setUsername(data.body.firstName + " " + data.body.lastName)
+        dispatch(updateUserProfile(data.body))
         setEditing(!editing)
       } else {
         console.error(response)
@@ -80,7 +81,7 @@ export default function Hero() {
         :
           <div>
             <p>
-              {username}!
+              {userFirstName} {userLastName}!
             </p>
             <button className="edit-button" onClick={e => handleClick()}>
                   Edit Name 
