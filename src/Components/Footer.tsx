@@ -4,8 +4,8 @@ import React from "react"
  */
 export default function Footer() {
   return (
-    <footer className="footer">
-      <p className="footer-text">
+    <footer className="flex justify-center border-t border-gray-700 py-8">
+      <p>
         Copyright 2020 Argent Bank
       </p>
     </footer>

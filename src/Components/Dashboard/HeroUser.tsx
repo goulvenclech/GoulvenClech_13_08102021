@@ -56,7 +56,7 @@ export default function Hero() {
   }
 
   return (
-    <div className="h-36 mb-8">
+    <div className="h-36 mb-8 text-center">
       <h1 className="text-2xl font-semibold text-gray-800">
         Welcome back
       </h1>

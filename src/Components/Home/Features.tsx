@@ -29,7 +29,7 @@ export default function Features() {
   ]
 
   return (
-    <section className="flex flex-col md:flex-row">
+    <section className="flex flex-col md:flex-row text-center">
       <h2 className="sr-only">
         Features
       </h2>
