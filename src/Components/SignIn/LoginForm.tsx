@@ -43,32 +43,32 @@ export default function LoginForm() {
   // a simple login form 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="input-wrapper">
+      <div className="flex flex-col text-left">
       {
         error === "" ?
         "" :
         <p>{error}</p>
       }
-      <label htmlFor="username">
+      <label className="font-bold" className="font-bold" htmlFor="username">
         Username
       </label>
-      <input type="text" id="username"
+      <input className="p-1 text-xl mb-2 mt-1 border-2 border-gray-400" type="text" id="username"
         onChange={e => setUsername(e.target.value)} />
       </div>
       <div className="input-wrapper">
-      <label htmlFor="password">
+      <label className="font-bold" htmlFor="password">
         Password
       </label>
-      <input type="password" id="password"
+      <input className="p-1 text-xl mb-2 mt-1 border-2 border-gray-400" type="password" id="password"
         onChange={e => setPassword(e.target.value)} />
       </div>
       <div className="input-remember">
-      <label htmlFor="remember-me">
+      <label className="font-bold" htmlFor="remember-me">
         Remember me
       </label>
-      <input type="checkbox" id="remember-me" />
+      <input className="p-1 text-xl ml-2 border-2 border-gray-400" type="checkbox" id="remember-me" />
       </div>
-      <button type="submit" className="sign-in-button">
+      <button type="submit" className="block w-full p-2 text-lg font-bold mt-4 bg-green-500 text-white">
         Sign In
       </button>
     </form>

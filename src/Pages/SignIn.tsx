@@ -8,12 +8,12 @@ export default function SignInPage() {
   const logged = useAppSelector(state => state.login.isLogged)
 
   return (
-    <main className="main bg-dark">
+    <main className="flex-1 p-10 bg-gray-300">
       {
         !logged ? 
-        <section className="sign-in-content">
-          <i className="fa fa-user-circle sign-in-icon"></i>
-          <h1>
+        <section className="box-border bg-white w-80 mx-auto p-8">
+          <i className="fa fa-user-circle text-7xl"></i>
+          <h1 className="text-xl font-bold my-2">
             Sign In
           </h1>
           <LoginForm />

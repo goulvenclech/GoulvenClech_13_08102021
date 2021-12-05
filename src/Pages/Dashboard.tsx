@@ -18,7 +18,7 @@ export default function DashboardPage() {
   dispatch(updateUserProfile(apiData))
 
   return (
-    <main className="main bg-dark">
+    <main className="flex-1bg-dark">
       { !logged ? <Information icon="🔒" message="Vous devez être connecté" /> :
         <>
           { serverError ? <Information icon="⚠️" message="Une erreur serveur est survenue" /> :
