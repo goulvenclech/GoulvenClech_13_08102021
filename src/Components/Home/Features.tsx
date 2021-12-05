@@ -29,19 +29,20 @@ export default function Features() {
   ]
 
   return (
-    <section className="features">
+    <section className="flex flex-col md:flex-row">
       <h2 className="sr-only">
         Features
       </h2>
       {
         featureItems.map((featureItem, index) => {
-          return <div className="feature-item" key={index}>
-            <img src={`./img/${featureItem.icon}`} alt="Chat Icon" className="feature-icon" />
-            <h3 className="feature-item-title">
+          return <div className="flex-1 p-10" key={index}>
+            <img src={`./img/${featureItem.icon}`} alt="Chat Icon" 
+              className="p-4 w-24 mx-auto border-8 border-solid border-green-500 rounded-full" />
+            <h3 className=" text-xl font-bold my-2">
               {featureItem.title}
             </h3>
             <p>
-              {featureItem.title}
+              {featureItem.text}
             </p>
           </div>
         })
