@@ -8,7 +8,7 @@ export default function SignInPage() {
   const logged = useAppSelector(state => state.login.isLogged)
 
   return (
-    <main className="flex-1 p-10 bg-gray-300">
+    <main className="flex-1 py-10 bg-gray-300">
       {
         !logged ? 
         <section className="box-border bg-white w-80 mx-auto p-8">

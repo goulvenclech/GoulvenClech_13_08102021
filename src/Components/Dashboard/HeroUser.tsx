@@ -56,34 +56,34 @@ export default function Hero() {
   }
 
   return (
-    <div className="header">
-      <h1>
+    <div className="h-36 mb-8">
+      <h1 className="text-2xl font-semibold text-gray-800">
         Welcome back
       </h1>
       {
         editing ? 
-          <form onSubmit={handleSubmit}>
-            <div className="flex justify-center gap-4">
+          <form className="flex flex-col gap-2 mt-2" onSubmit={handleSubmit}>
+            <div className="flex justify-center gap-2">
               <input type="text" className="p-2 rounded-sm border-2 border-gray-400 text-black" placeholder={userFirstName}
                 onChange={e => setNewFirstName(e.target.value)} />
               <input type="text" className="p-2 rounded-sm border-2 border-gray-400 text-black" placeholder={userLastName}
                 onChange={e => setNewLastName(e.target.value)} />
             </div>
-            <div className="flex justify-center gap-4">
-              <button type="submit" className="sign-in-button">
+            <div className="flex justify-center gap-2">
+              <button type="submit" className="block w-24 p-2 font-bold bg-white border border-green-500 text-green-500">
                     Save 
               </button>
-              <button className="edit-button" onClick={e => handleClick()}>
+              <button className="block w-24 p-2 font-bold bg-white border border-green-500 text-green-500" onClick={e => handleClick()}>
                     Cancel 
               </button>
             </div>
           </form>
         :
           <div>
-            <p>
+            <p className="text-lg my-3 text-black">
               {userFirstName} {userLastName}!
             </p>
-            <button className="edit-button" onClick={e => handleClick()}>
+            <button className="block mx-auto w-36 p-2 font-bold mt-4 bg-white border border-green-500 text-green-500" onClick={e => handleClick()}>
                   Edit Name 
             </button>
           </div>

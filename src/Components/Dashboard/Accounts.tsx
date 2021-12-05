@@ -19,22 +19,23 @@ export default function Accounts() {
       </h2>
       {
         accountsArray.map((account, index) => {
-          return <section className="account" key={index}>
-            <div className="account-content-wrapper">
-            <h3 className="account-title">
-              {account.name}
-            </h3>
-            <p className="account-amount">
-              {account.balance}
-            </p>
-            <p className="account-amount-description">
-              {`${account.description} Balance`}
-            </p>
+          return <section key={index} className="flex flex-col md:flex-row justify-between items-center 
+            border border-black bg-white w-4/5 mx-auto mb-4 px-6 py-4 box-border text-left">
+            <div className="w-full flex-1">
+              <h3>
+                {account.name}
+              </h3>
+              <p className="text-4xl my-2 font-bold">
+                {account.balance}
+              </p>
+              <p>
+                {`${account.description} Balance`}
+              </p>
             </div>
-            <div className="account-content-wrapper cta">
-            <button className="transaction-button">
-              View transactions
-            </button>
+            <div className="flex-1 w-full">
+              <button className="block w-full md:w-72 lg:w-80 md:ml-auto p-2 text-lg font-bold mt-4 bg-green-500 text-white">
+                View transactions
+              </button>
             </div>
           </section>
         })

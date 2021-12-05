@@ -43,30 +43,30 @@ export default function LoginForm() {
   // a simple login form 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex flex-col text-left">
-      {
-        error === "" ?
-        "" :
-        <p>{error}</p>
-      }
-      <label className="font-bold" className="font-bold" htmlFor="username">
-        Username
-      </label>
-      <input className="p-1 text-xl mb-2 mt-1 border-2 border-gray-400" type="text" id="username"
-        onChange={e => setUsername(e.target.value)} />
-      </div>
-      <div className="input-wrapper">
-      <label className="font-bold" htmlFor="password">
-        Password
-      </label>
-      <input className="p-1 text-xl mb-2 mt-1 border-2 border-gray-400" type="password" id="password"
-        onChange={e => setPassword(e.target.value)} />
-      </div>
-      <div className="input-remember">
-      <label className="font-bold" htmlFor="remember-me">
-        Remember me
-      </label>
-      <input className="p-1 text-xl ml-2 border-2 border-gray-400" type="checkbox" id="remember-me" />
+      <div className="flex flex-col text-left px">
+        {
+          error === "" ?
+          "" :
+          <p>{error}</p>
+        }
+        <label className="font-bold" htmlFor="username">
+          Username
+        </label>
+        <input className="p-1 text-xl mb-2 mt-1 border-2 border-gray-400" type="text" id="username"
+          onChange={e => setUsername(e.target.value)} />
+        </div>
+        <div className="flex flex-col text-left mb-4">
+        <label className="font-bold" htmlFor="password">
+          Password
+        </label>
+        <input className="p-1 text-xl mb-2 mt-1 border-2 border-gray-400" type="password" id="password"
+          onChange={e => setPassword(e.target.value)} />
+        </div>
+        <div className="flex">
+        <label className="font-bold" htmlFor="remember-me">
+          Remember me
+        </label>
+        <input className="p-1 text-xl ml-2 border-2 border-gray-400" type="checkbox" id="remember-me" />
       </div>
       <button type="submit" className="block w-full p-2 text-lg font-bold mt-4 bg-green-500 text-white">
         Sign In
