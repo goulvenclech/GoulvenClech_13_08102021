@@ -37,7 +37,7 @@ export default function LoginForm() {
     })
     .catch(error => {
       console.error(error)
-      setError(error)
+      setError(error.toString())
     })
   }
   // a simple login form 
@@ -47,7 +47,9 @@ export default function LoginForm() {
         {
           error === "" ?
           "" :
-          <p>{error}</p>
+          <span className="font-bold text-sm text-center text-red-500 mb-3 mt-2">
+            {error}
+          </span>
         }
         <label className="font-bold" htmlFor="username">
           Username

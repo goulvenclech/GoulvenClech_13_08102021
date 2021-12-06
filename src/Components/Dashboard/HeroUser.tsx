@@ -56,14 +56,14 @@ export default function Hero() {
   }
 
   return (
-    <div className="h-36 mb-8 text-center">
+    <div className="h-44 md:h-36 mb-8 text-center">
       <h1 className="text-2xl font-semibold text-gray-800">
         Welcome back
       </h1>
       {
         editing ? 
           <form className="flex flex-col gap-2 mt-2" onSubmit={handleSubmit}>
-            <div className="flex justify-center gap-2">
+            <div className="flex flex-col md:flex-row mx-4 justify-center gap-2">
               <input type="text" className="p-2 rounded-sm border-2 border-gray-400 text-black" placeholder={userFirstName}
                 onChange={e => setNewFirstName(e.target.value)} />
               <input type="text" className="p-2 rounded-sm border-2 border-gray-400 text-black" placeholder={userLastName}

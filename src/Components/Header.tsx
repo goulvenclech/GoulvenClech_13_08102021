@@ -18,10 +18,10 @@ export default function Footer() {
     history.push("/dashboard")
   }
   return (
-    <nav className="main-nav">
-      <Link className="main-nav-logo" to="/">
+    <nav className="flex my-1 mx-2 md:mx-5 items-center">
+      <Link className="flex items-center" to="/">
         <img
-          className="main-nav-logo-image"
+          className="w-40 md:w-52"
           src="./img/argentBankLogo.png"
           alt="Argent Bank Logo"
         />
@@ -31,18 +31,18 @@ export default function Footer() {
       </Link>
       {
         logged === true ?
-        <div>
-          <a className="main-nav-item cursor-pointer" onClick={handleClickProfile}>
-            <i className="fa fa-user-circle"></i>
+        <div className="ml-auto md:text-lg flex gap-4">
+          <a className="no-underline font-bold hover:underline cursor-pointer" onClick={handleClickProfile}>
+            <i className="mr-1 fa fa-user-circle"></i>
             {userFirstName}
           </a>
-          <a className="main-nav-item cursor-pointer" onClick={handleSignOut}>
-            <i className="fa fa-sign-out"></i>
+          <a className="no-underline font-bold hover:underline cursor-pointer" onClick={handleSignOut}>
+            <i className="mr-1 fa fa-sign-out"></i>
             Sign out
           </a> 
         </div> :
-        <Link className="main-nav-item" to="/sign-in">
-          <i className="fa fa-user-circle"></i>
+        <Link className="ml-auto no-underline font-bold hover:underline" to="/sign-in">
+          <i className="mr-1 fa fa-user-circle"></i>
           Sign In
         </Link>
       }
