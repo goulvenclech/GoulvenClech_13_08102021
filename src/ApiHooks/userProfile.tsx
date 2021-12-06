@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { baseURL } from "../App"
 import { emptyProfile } from "../dataTypes"
 /**
  * With a correct token, fetch the user profile end point of our API 
@@ -10,7 +11,7 @@ export const useUserProfile = (token: string) => {
   
     useEffect(() => {
       setIsLoading(true)
-      fetch("http://localhost:3001/api/v1/user/profile", {
+      fetch(baseURL + "/api/v1/user/profile", {
         method: "POST",
         headers: { Authorization: "Bearer " + token, accept: "application/json"}
       })

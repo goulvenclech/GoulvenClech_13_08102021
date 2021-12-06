@@ -1,4 +1,5 @@
 import React from "react"
+import Information from "../Components/Information"
 import LoginForm from "../Components/SignIn/LoginForm"
 import { useAppSelector } from '../Redux/Hooks'
 /**
@@ -19,10 +20,7 @@ export default function SignInPage() {
           <LoginForm />
         </section>
         :
-          <div className="text-center py-48 text-white text-xl">
-            <p className="text-3xl pb-2">✅</p>
-            <p>Vous êtes déjà connecté</p>
-          </div>
+          <Information icon="✅" message="You are already logged" />
       }
     </main>
   )

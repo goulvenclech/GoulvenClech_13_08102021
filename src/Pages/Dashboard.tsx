@@ -19,11 +19,11 @@ export default function DashboardPage() {
 
   return (
     <main className="flex-1 py-10 bg-gray-300">
-      { !logged ? <Information icon="🔒" message="Vous devez être connecté" /> :
+      { !logged ? <Information icon="🔒" message="You must be logged in" /> :
         <>
-          { serverError ? <Information icon="⚠️" message="Une erreur serveur est survenue" /> :
+          { serverError ? <Information icon="⚠️" message="A server error has occurred" /> :
             <>
-              { isLoading ? <Information icon="👀" message="Chargement de votre profil" /> : 
+              { isLoading ? <Information icon="👀" message="Loading your profile" /> : 
                   <>
                     <Hero />
                     <Accounts />

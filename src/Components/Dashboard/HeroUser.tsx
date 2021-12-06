@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { baseURL } from "../../App"
 import { useAppDispatch, useAppSelector } from "../../Redux/Hooks"
 import { updateUserProfile } from "../../Redux/Slices/ProfileSlice"
 /**
@@ -30,7 +31,7 @@ export default function Hero() {
     evt.preventDefault()
     console.log(token)
     // Reqyest the back end to change the user's name
-    fetch("http://localhost:3001/api/v1/user/profile", {
+    fetch(baseURL + "/api/v1/user/profile", {
       method: "PUT",
       headers: { Authorization: "Bearer " + token, "Content-Type": "application/json"},
       body: JSON.stringify({

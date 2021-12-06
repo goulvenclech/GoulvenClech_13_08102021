@@ -1,6 +1,6 @@
 import React from "react"
 /**
- * 
+ * Used to displayed error or loading messages around the app
  */
 export default function Information(props: Props) {
   return (

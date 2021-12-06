@@ -5,7 +5,6 @@ import { store } from "./Redux/Store"
 import { BrowserRouter as Router, Switch, Route }
  from "react-router-dom"
 import "tailwindcss/tailwind.css"
-import "../designs/css/main.css"
 // import all pages & components
 import Footer from "./Components/Footer"
 import Header from "./Components/Header"
@@ -13,6 +12,8 @@ import HomePage from "./Pages/Home"
 import SignInPage from "./Pages/SignIn"
 import DashboardPage from "./Pages/Dashboard"
 import NotFoundPage from "./Pages/NotFound"
+// define base URL for the API back end
+export const baseURL = "http://localhost:3001" 
 /**
  * Contain the router logic of our App !
  */
